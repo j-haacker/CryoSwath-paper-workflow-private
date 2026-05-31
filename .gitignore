@@ -1,0 +1,47 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.pixi/*
+!.pixi/config.toml
+
+.codex
+.ipynb_checkpoints
+.nsidc_cookies
+.ruff_cache
+.snakemake
+.vscode
+logs
+results
+resources
+data
+config.ini
+nohup_*
+
+/paper/copernicus.*
+/paper/figures/*
+
+# Manuscript build artifacts
+manuscript.aux
+manuscript.log
+manuscript.pdf
+manuscript.tex
+.snakemake-cache/
+
+# Large local downloads and scratch outputs
+arcticdem_mosaic_100m_v4.1.tar.gz
+*.aria2
+dag.pdf
+tmp.png
+tmp__*
+bias_by_interp_type.png
+
+analysis/exclude_alaskan_peninsula.ipynb
+analysis/prepare_calval.py.ipynb
+analysis/quick_text_coverage_tbl.ipynb

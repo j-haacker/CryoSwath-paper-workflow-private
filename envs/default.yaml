@@ -1,0 +1,23 @@
+name: default
+channels:
+- conda-forge
+- bioconda
+- nodefaults
+dependencies:
+- aria2 >=1.37.0,<2
+- conda >=26.5.0,<27
+- cryoswath ==0.2.6
+- dask >=2026.1.2,<2027
+- distributed >=2026.1.2,<2027
+- jupyter >=1.1.1,<2
+- matplotlib >=3.10.8,<4
+- pandas >=2,<3
+- papermill >=2.6.0,<3
+- seaborn >=0.13.2,<0.14
+- snakemake ==9.17.2
+- sqlite >=3.37
+- unzip >=6.0,<7
+- wget >=1.25.0,<2
+- imagemagick >=7.1.2_3,<8
+- python >=3.11
+
