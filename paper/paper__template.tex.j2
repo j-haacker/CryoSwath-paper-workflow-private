@@ -320,7 +320,7 @@ The version used for the present data is 0.2.2 \citep{cryoswath022}.
 With the L1b data product, ESA provides indicators (flags) that help to recognize
 potentially bad data.
 We discard waveforms that are flagged with one or more of the
-``measurement confidence data'' flags (\verb|flag\_mcd\_20\_ku|)
+``measurement confidence data'' flags (\verb|flag_mcd_20_ku|)
 stated in Table~\ref{tab:mcd_flags} to
 reduce the risk of polluting the dataset with erroneous measurements.
 While this is CryoSwath's default choice, it allows any user-defined selection.
@@ -823,7 +823,7 @@ effective number of observations is 6 or larger.
 require weighted averages for at least five elevation bands.
 We use the ridge regression implementation of \texttt{scikit\allowbreak-learn}
 \citep{pedregosa2011ScikitlearnMachineLearning,
-thescikit-learndevelopers2025Scikitlearn} with the singular value
+scikit-learndevelopers2025Scikitlearn} with the singular value
 decomposition solver that allows weighting the observations, to fit the
 polynomial.
 Next to weighting the residuals which will be explained below, this
@@ -2004,11 +2004,11 @@ regional climatological shifts.
     \vspace{1\baselineskip}
     \begin{tabular}{ll}\tophline
         Item & DOI \\ \middlehline
-        Monthly dataset & \href{https://doi.org/10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2.v2}{\texttt{\small 10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2.v2}} \\
-        Trend dataset & \href{https://doi.org/10.4121/85738a14-6652-4e0c-8552-d6fc729141b3.v3}{\texttt{\small 10.4121/85738a14-6652-4e0c-8552-d6fc729141b3.v3}} \\
-        Greendland subregions & \href{https://doi.org/10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56.v1}{\texttt{\small 10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56.v1}} \\
-        Results and figures code & \href{https://doi.org/10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6.v1}{\texttt{\small 10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6.v1}} \\
-        Reproduction-support data & \href{https://doi.org/10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2.v1}{\texttt{\small 10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2.v2}} \\ \bottomhline
+        Monthly dataset & \href{https://doi.org/10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2}{\texttt{\small 10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2}} \\
+        Trend dataset & \href{https://doi.org/10.4121/85738a14-6652-4e0c-8552-d6fc729141b3}{\texttt{\small 10.4121/85738a14-6652-4e0c-8552-d6fc729141b3}} \\
+        Greendland subregions & \href{https://doi.org/10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56}{\texttt{\small 10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56}} \\
+        Results and figures code & \href{https://doi.org/10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6}{\texttt{\small 10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6}} \\
+        Reproduction-support data & \href{https://doi.org/10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2}{\texttt{\small 10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2}} \\ \bottomhline
     \end{tabular}
 } %% use this section when having data sets and software code available
 
@@ -2024,21 +2024,21 @@ regional climatological shifts.
     \begin{tabularx}{\linewidth}{l >{\hangafter=1\hangindent=1em}X}% >{\RaggedRight}
         \tophline
         Flag name & Flag meaning \\ \middlehline
-        \verb|block\_degraded| & Block Degraded. Set if the block is degraded and should not be processed. \\
-        \verb|blank\_block| & Blank Block. Set if a blank block has been inserted for record padding. \\
-        \verb|datation\_degraded| & Datation Degraded. Set if the datation is degraded. \\
-        \verb|orbit\_prop\_error| & Orbit Propagation Error. Set if an error has been returned by a retracker algorithm or independent check. \\
-        \verb|echo\_saturated| & Echo Saturation. From the echo saturation flag from the telemetry. \\
-        \verb|echo\_rx1\_error| & Receive Chain 1 (Rx1) Error. Set if the Rx1 chain raw echo is degraded or missing. \\
-        \verb|echo\_rx2\_error| & Receive Chain 2 (Rx2) Error. Set if the Rx2 chain raw echo is degraded or missing. \\
-        \verb|trk\_echo\_error| & Tracking Echo Error. Set if the tracking echo is degraded. \\
-        \verb|other\_echo\_error| & Other Echo Error. Redundant: Set if one of \verb|echo\_rx1\_error|, \verb|echo\_rx2\_error|, or \verb|trk\_echo\_error| are flagged. \\
-        \verb|sarin\_rx1\_error| & SARIn Receive Chain 1 (Rx1) Error. Set if the Rx1 chain is degraded or missing. \\
-        \verb|sarin\_rx2\_error| & SARIn Receive Chain 2 (Rx2) Error. Set if the Rx2 chain is degraded or missing. \\
-        \verb|window\_delay\_error| & Window Delay Error. Set if the window delay value is out of range or if there is a computation error. \\
-        \verb|agc\_error| & Automatic gain control (AGC) Error. Set if the AGC value is out of range or if there is a computation error. \\
-        \verb|npm\_error| & Noise Power Measurement Error. Set if the NPM is degraded, out of range, or there is a computation error. \\
-        \verb|power\_scale\_error| & Power Scaling Error. Set if there is an error in the power scaling of the echo (L1B waveform is null). \\
+        \verb|block_degraded| & Block Degraded. Set if the block is degraded and should not be processed. \\
+        \verb|blank_block| & Blank Block. Set if a blank block has been inserted for record padding. \\
+        \verb|datation_degraded| & Datation Degraded. Set if the datation is degraded. \\
+        \verb|orbit_prop_error| & Orbit Propagation Error. Set if an error has been returned by a retracker algorithm or independent check. \\
+        \verb|echo_saturated| & Echo Saturation. From the echo saturation flag from the telemetry. \\
+        \verb|echo_rx1_error| & Receive Chain 1 (Rx1) Error. Set if the Rx1 chain raw echo is degraded or missing. \\
+        \verb|echo_rx2_error| & Receive Chain 2 (Rx2) Error. Set if the Rx2 chain raw echo is degraded or missing. \\
+        \verb|trk_echo_error| & Tracking Echo Error. Set if the tracking echo is degraded. \\
+        \verb|other_echo_error| & Other Echo Error. Redundant: Set if one of \verb|echo_rx1_error|, \verb|echo_rx2_error|, or \verb|trk_echo_error| are flagged. \\
+        \verb|sarin_rx1_error| & SARIn Receive Chain 1 (Rx1) Error. Set if the Rx1 chain is degraded or missing. \\
+        \verb|sarin_rx2_error| & SARIn Receive Chain 2 (Rx2) Error. Set if the Rx2 chain is degraded or missing. \\
+        \verb|window_delay_error| & Window Delay Error. Set if the window delay value is out of range or if there is a computation error. \\
+        \verb|agc_error| & Automatic gain control (AGC) Error. Set if the AGC value is out of range or if there is a computation error. \\
+        \verb|npm_error| & Noise Power Measurement Error. Set if the NPM is degraded, out of range, or there is a computation error. \\
+        \verb|power_scale_error| & Power Scaling Error. Set if there is an error in the power scaling of the echo (L1B waveform is null). \\
         \bottomhline
     \end{tabularx}
 \end{table}

@@ -1,7 +1,7 @@
 # CryoSwath paper workflow
 
 This repository contains the Snakemake workflow that builds the figures,
-tables, and manuscript for the article.
+tables, and results for the manuscript.
 
 ## Requirements
 

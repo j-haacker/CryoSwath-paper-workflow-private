@@ -1,6 +1,5 @@
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 import pandas as pd
-from pathlib import Path
 
 from cryoswath_paper_workflow.workflow_support import (
     out_to_snakemake_log_or_fallback_stdout,
@@ -81,7 +80,6 @@ def prepend_figure_path(filename: str) -> str:
 
 def main():
     env = Environment(
-        loader=FileSystemLoader(str(project_path("paper"))),
         autoescape=False,
         block_start_string=r"\BLOCK{",
         block_end_string="}",
@@ -96,15 +94,13 @@ def main():
     env.filters["MB"] = format_single_MB_val
     env.filters["P"] = format_single_percentage
 
-    template = env.get_template(
-        str(
-            Path(
-                snakemake_fallback(
-                    "input", "template", project_path("paper", "paper__template.tex.j2")
-                )
-            ).relative_to(project_path("paper"))
+    with open(
+        snakemake_fallback(
+            "input", "template", project_path("paper", "paper__template.tex.j2")
         )
-    )
+    ) as template_file:
+        template = env.from_string(template_file.read())
+
     with (
         open(
             snakemake_fallback(
@@ -289,7 +285,7 @@ def main():
                 ),
                 cover_fit=yaml.safe_load(in_cover_fit),
                 tabA2=in_tabA2.read(),
-            ).replace("\\cs", "CryoSat‑2")  # avoid macro-usage
+            ).replace("\\cs", "\\mbox{CryoSat-2}")  # avoid macro-usage
         )
 
 

@@ -341,6 +341,8 @@ this file.
   the uncertainties of most results.
 - Added these lock files for all region.
 - Added `fig03__geometry_sketch.png`.
+- Added missing references to `.bbl` file. (!) Keys changed due to
+  Zotero update.
 """
 
 
@@ -404,8 +406,8 @@ def build_archive(output: Path, allow_missing: bool) -> int:
     manifest = {
         "title": 'Ancilliary data for the reproduction workflow of the article "CryoSwath: a CryoSat-2 swath processor and monthly surface elevation dataset for Arctic mountain glaciers"',
         "article_title": "CryoSwath: a CryoSat-2 swath processor and monthly surface elevation dataset for Arctic mountain glaciers",
-        "dataset_doi": "10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2",
-        "code_release_doi": "10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6",
+        "dataset_doi": "10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2.v2",
+        "code_release_doi": "10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6.v1",
         "license": "CC-BY-4.0",
         "created_at": datetime.now(timezone.utc)
         .isoformat(timespec="seconds")
