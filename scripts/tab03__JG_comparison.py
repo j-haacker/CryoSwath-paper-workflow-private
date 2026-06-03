@@ -18,13 +18,13 @@ snakemake = globals().get("snakemake", snakemake_mock)
 
 ref_JG = pd.DataFrame.from_dict(
     {
-        "Alaska": [83.1, 7.6],
-        "Arctic Canada North": [23.2, 1.9],
-        "Arctic Canada South": [23.4, 2.0],
-        "Greenland Periphery": [23.8, 2.0],
-        "Iceland": [3.5, 0.3],
-        "Svalbard and Jan Mayen": [18.4, 1.6],
-        "Russian Arctic": [18.4, 1.0],
+        "Alaska": [-83.1, 7.6],
+        "Arctic Canada North": [-23.2, 1.9],
+        "Arctic Canada South": [-23.4, 2.0],
+        "Greenland Periphery": [-23.8, 2.0],
+        "Iceland": [-3.5, 0.3],
+        "Svalbard and Jan Mayen": [-18.4, 1.6],
+        "Russian Arctic": [-18.4, 1.0],
     },
     orient="index",
     columns=["ref", "ref_err"],

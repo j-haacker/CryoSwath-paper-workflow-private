@@ -1,4 +1,5 @@
 from jinja2 import Environment
+import os
 import pandas as pd
 
 from cryoswath_paper_workflow.workflow_support import (
@@ -75,7 +76,7 @@ def format_single_percentage(value: float, prec: int) -> str:
 
 
 def prepend_figure_path(filename: str) -> str:
-    return str(project_path("paper", "figures") / filename)
+    return os.path.join("figures", filename)
 
 
 def main():
@@ -232,6 +233,7 @@ def main():
                     " & ".join([l, *list(map("{:.2f}".format, row.values))])  # type: ignore
                     for l, row in pd.DataFrame.from_dict(scandi)
                     .T[["specific", "sp_err"]]
+                    .abs()  # thinning -> minus sign implied
                     .iterrows()
                 ]
             )
