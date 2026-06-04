@@ -11,6 +11,7 @@
 - Fixed treating "Region number" as numeric scale during plotting which
   let to defaulting to a less explicit palette and not mentioning all
   regions in the legend.
+- Revise paper template, fixing multiple issues.
 
 ## v1 - 2026-06-02
 
