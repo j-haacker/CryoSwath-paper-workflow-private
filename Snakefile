@@ -208,7 +208,7 @@ if PUBLICATION_ARTIFACT_SOURCE == "produced":
 
     rule tabA2__subregion_overview:
         input:
-            trends=TREND_RASTERS,
+            trends=ancient(TREND_RASTERS),
             glaciers=ancient(
                 expand(
                     "<resources>/auxiliary/RGI/RGI2000-v7.0-G-{token}/RGI2000-v7.0-G-{token}.shp",
@@ -666,7 +666,7 @@ if COVERAGE_ANALYSIS_SOURCE == "produced":
 
 rule fig16__coverage_terraincomplexity_correlation:
     input:
-        ancient(CURRENT_SOURCE_COVERAGE_ANALYSIS),
+        CURRENT_SOURCE_COVERAGE_ANALYSIS,
     output:
         fig="paper/figures/fig16__coverage_terraincomplexity_correlation.pdf",
         fit="<results>/coverage_terraincomplexity_correlation.yaml",
