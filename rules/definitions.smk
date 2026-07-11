@@ -83,10 +83,16 @@ def pathvar_path(path):
     return workflow.pathvars.apply(path)
 
 
-CRYOSWATH_AUX_FILES = expand(
-    "<resources>/auxiliary/CryoSat-2_SARIn_{suffix}",
-    suffix=["ground_tracks.feather", "file_names.pkl"],
-)
+RGI_O1_REGIONS = "<resources>/auxiliary/RGI/RGI2000-v7.0-o1regions.feather"
+RGI_O2_REGIONS = "<resources>/auxiliary/RGI/RGI2000-v7.0-o2regions.feather"
+CRYOSWATH_AUX_FILES = [
+    *expand(
+        "<resources>/auxiliary/CryoSat-2_SARIn_{suffix}",
+        suffix=["ground_tracks.feather", "file_names.pkl"],
+    ),
+    RGI_O1_REGIONS,
+    RGI_O2_REGIONS,
+]
 
 MANUSCRIPT_EXTERNAL_FIGURE_MANIFEST = "paper/external_figures.txt"
 TREND_DATASET_ARCHIVE_URL = (

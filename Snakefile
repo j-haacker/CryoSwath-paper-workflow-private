@@ -211,6 +211,8 @@ if PUBLICATION_ARTIFACT_SOURCE == "produced":
     rule tabA2__subregion_overview:
         input:
             trends=ancient(TREND_RASTERS),
+            rgi_o1=ancient(RGI_O1_REGIONS),
+            rgi_o2=ancient(RGI_O2_REGIONS),
             glaciers=ancient(
                 expand(
                     "<resources>/auxiliary/RGI/RGI2000-v7.0-G-{token}/RGI2000-v7.0-G-{token}.shp",
@@ -233,6 +235,8 @@ if GLACIERIZED_AREA_SOURCE == "produced":
     rule glacierized_areas:
         input:
             ancient(TREND_RASTERS),
+            rgi_o1=ancient(RGI_O1_REGIONS),
+            rgi_o2=ancient(RGI_O2_REGIONS),
         output:
             CURRENT_SOURCE_AREA_TABLE,
         params:
@@ -265,6 +269,11 @@ if PUBLICATION_ARTIFACT_SOURCE == "produced":
 if CALVAL_SOURCE == "produced":
 
     rule calval__select_arcticdem_strips:
+        input:
+            rgi_o1=ancient(RGI_O1_REGIONS),
+            glaciers=ancient(
+                "<resources>/auxiliary/RGI/RGI2000-v7.0-G-{token}/RGI2000-v7.0-G-{token}.shp"
+            ),
         output:
             "<resources>/calval/select_arcticdem_strips__{token}.lock.feather",
             "<resources>/calval/select_arcticdem_strips__{token}.png",
@@ -277,6 +286,7 @@ if CALVAL_SOURCE == "produced":
     rule calval__download_arcticdem_strips:
         input:
             "<resources>/calval/select_arcticdem_strips__{token}.lock.feather",
+            rgi_o1=ancient(RGI_O1_REGIONS),
         output:
             "<resources>/calval/download_arcticdem_strips__{token}.done",
         threads: 4
@@ -416,6 +426,8 @@ if ELEVATION_TIMESERIES_SOURCE == "produced":
             ),
             unc_tbl="<results>/uncertainty_by_interp__uncertainty.csv",
             corr_tbl="<results>/uncertainty_by_interp__correlations.csv",
+            rgi_o1=ancient(RGI_O1_REGIONS),
+            rgi_o2=ancient(RGI_O2_REGIONS),
         output:
             CURRENT_SOURCE_AVG_TABLE,
         log:
@@ -464,6 +476,7 @@ rule fig05__regional_time_series:
     input:
         area_tbl=CURRENT_SOURCE_AREA_TABLE,
         avg_elev_tbl=CURRENT_SOURCE_AVG_TABLE,
+        rgi_o1=ancient(RGI_O1_REGIONS),
     output:
         "paper/figures/fig05__regional_time_series.pdf",
     log:
@@ -683,6 +696,7 @@ if PUBLICATION_ARTIFACT_SOURCE == "produced":
     rule omitted_subregions:
         input:
             ancient("<resources>/auxiliary/RGI/RGI2000-v7.0-G-global-attributes.csv"),
+            rgi_o2=ancient(RGI_O2_REGIONS),
         output:
             "<results>/omitted_subregions.csv",
         log:
