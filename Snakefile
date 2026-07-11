@@ -107,21 +107,23 @@ rule o2reg_filename_token_list:
         make_o2reg_filename_token_list(output[0])
 
 
-rule download_external_figures:
-    output:
-        MANUSCRIPT_EXTERNAL_FIGURES,
-    params:
-        archive=pathvar_path("<resources>/downloads/downloaded_publication_data.zip"),
-        url=PUBLICATION_DATA_URL,
-    log:
-        "<logs>/download_external_figures.log",
-    run:
-        download_archive_members(
-            url=params.url,
-            archive_path=params.archive,
-            destinations=list(output),
-            log_path=log[0],
-        )
+if PUBLICATION_ARTIFACT_SOURCE != "downloaded":
+
+    rule download_external_figures:
+        output:
+            MANUSCRIPT_EXTERNAL_FIGURES,
+        params:
+            archive=pathvar_path("<resources>/downloads/downloaded_publication_data.zip"),
+            url=PUBLICATION_DATA_URL,
+        log:
+            "<logs>/download_external_figures.log",
+        run:
+            download_archive_members(
+                url=params.url,
+                archive_path=params.archive,
+                destinations=list(output),
+                log_path=log[0],
+            )
 
 
 rule download_monthly_dataset:
@@ -179,7 +181,7 @@ rule fig03__combined_sketch:
         "<logs>/fig03__combined_sketch.log",
     shell:
         r"""
-        FONT=$(pixi run fc-match -f '%{{file}}\n' 'DejaVu Sans:style=Bold')
+        FONT=$(fc-match -f '%{{file}}\n' 'DejaVu Sans:style=Bold')
         echo "Found font at file: $FONT" > {log}
         SPEC="-gravity northwest -font $FONT -pointsize {params.fs} -annotate {params.pos}"
         echo "Full font specifier:\n$SPEC" >> {log}

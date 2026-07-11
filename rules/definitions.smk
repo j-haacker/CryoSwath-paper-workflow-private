@@ -310,7 +310,6 @@ PUBLICATION_ARCHIVED_FIGURES = [
     "paper/figures/fig02__example__wf_start.pdf",
     "paper/figures/fig15__vatna_hugonnet_stat_comparison.pdf",
     "paper/figures/figA3__vavilov_feature.pdf",
-    *MANUSCRIPT_EXTERNAL_FIGURES,
 ]
 
 PUBLICATION_ARCHIVED_MANUSCRIPT_INPUTS = [
@@ -346,4 +345,5 @@ PUBLICATION_REPRODUCTION_OUTPUTS = [
     "paper/manuscript.tex",
     *PUBLICATION_RERUNNABLE_FIGURES,
     *PUBLICATION_ARCHIVED_FIGURES,
+    *MANUSCRIPT_EXTERNAL_FIGURES,
 ]

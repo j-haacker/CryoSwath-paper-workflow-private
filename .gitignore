@@ -32,6 +32,9 @@ manuscript.aux
 manuscript.log
 manuscript.pdf
 manuscript.tex
+/paper/manuscript_*
+/paper/*.fdb_latexmk
+/paper/*.fls
 .snakemake-cache/
 
 # Large local downloads and scratch outputs

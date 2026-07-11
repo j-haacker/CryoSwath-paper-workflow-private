@@ -281,8 +281,8 @@ is the Greenland periphery.
 While in the RGI dataset, it constitutes a single subregion, we divide it
 into 5 subregions: North Greenland, West Greenland, Southwest Greenland,
 Southeast Greenland, and East Greenland.
-We provide lists of the RGI glacier and complex identifiers for each
-custom subregion in \citet{haacker2025ListsGlacierComplex}.
+The lists of the RGI glacier and complex identifiers for each
+custom subregion are available (Sect.~\ref{sec:dataAvail}).
 
 
 \section{Algorithm}
@@ -313,7 +313,7 @@ CryoSwath can be installed using the package managers
 \href{https://pypi.org/project/cryoswath/}{pip} or
 \href{https://anaconda.org/conda-forge/cryoswath}{conda}, or can be used
 inside a \href{https://hub.docker.com/r/cryoswath/jupyterlab}{Docker container}.
-The version used for the present data is 0.2.2 \citep{cryoswath022}.
+The version used for the present data is 0.2.2.
 
 
 \subsection{Data selection}
@@ -1985,32 +1985,42 @@ regional climatological shifts.
 
 
 \codedataavailability{
+    \label{sec:dataAvail}
     \sloppy
-    All code is published open-source under the MIT license, and all data
-    are freely available under the CC-BY-4.0 license.
-    The code for producing the datasets, CryoSwath, has DOI
+    All code is published open-source under the MIT license, and all
+    data are freely available under the CC-BY-4.0 license. The code for
+    producing the datasets, CryoSwath, can be accessed at Zenodo under
+    code DOI
     \href{https://doi.org/10.5281/zenodo.14825358}{\texttt{\small
-    10.5281\allowbreak/zenodo\allowbreak.14825358}}, with version 0.2.2
-    being available under DOI
+    10.5281\allowbreak/zenodo\allowbreak.14825358}}
+    \citep{cryoswath}, with the used version
+    0.2.2 specifically being available under DOI
     \href{https://doi.org/10.5281/zenodo.15064780}{\texttt{\small
-    10.5281\allowbreak/zenodo\allowbreak.15064780}}. The monthly
-    elevation and trend datasets themselves, together with the code and
-    ancillary data to reproduce the current manuscript and the glacier
-    groups that were used to interpolate voids in the Greenland
-    Periphery, are collected under DOI
-    \href{https://doi.org/10.4121/62cb28a5-7a7e-4b65-9d9e-969439c89024}{\texttt{\small
-    10.4121\allowbreak/62cb28a5\allowbreak-7a7e\allowbreak-4b65\allowbreak-9d9e\allowbreak-969439c89024}}.
-    Their individual DOIs are listed below.
-
-    \vspace{1\baselineskip}
-    \begin{tabular}{ll}\tophline
-        Item & DOI \\ \middlehline
-        Monthly dataset & \href{https://doi.org/10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2}{\texttt{\small 10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2}} \\
-        Trend dataset & \href{https://doi.org/10.4121/85738a14-6652-4e0c-8552-d6fc729141b3}{\texttt{\small 10.4121/85738a14-6652-4e0c-8552-d6fc729141b3}} \\
-        Greenland subregions & \href{https://doi.org/10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56}{\texttt{\small 10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56}} \\
-        Results and figures code & \href{https://doi.org/10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6}{\texttt{\small 10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6}} \\
-        Reproduction-support data & \href{https://doi.org/10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2}{\texttt{\small 10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2}} \\ \bottomhline
-    \end{tabular}
+    10.5281\allowbreak/zenodo\allowbreak.15064780}}. The remaining
+    datasets and code are all archived in 4TU.ResearchData. The monthly
+    elevation dataset is available under data DOI
+    \href{https://doi.org/10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2}{\texttt{\small
+    10.4121/955d7f5a-0e3f-4166-a411-f0dcc4557cb2}}
+    \citep{haacker2025GlacierSurfaceElevation}. The trend dataset is
+    published under data DOI
+    \href{https://doi.org/10.4121/85738a14-6652-4e0c-8552-d6fc729141b3}{\texttt{\small
+    10.4121/85738a14-6652-4e0c-8552-d6fc729141b3}}
+    \citep{haacker2025GlacierSurfaceElevationa}. The code that allows
+    reproducing this manuscript including many of its figures and values
+    can be accessed under code DOI
+    \href{https://doi.org/10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6}{\texttt{\small
+    10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6}}
+    \citep{haacker2026WorkflowReproductionArticle}. Ancillary data that
+    supports the reproduction code allowing skipping processing steps or
+    validating products is accessible under data DOI
+    \href{https://doi.org/10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2}{\texttt{\small
+    10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2}}
+    \citep{haacker2026AncilliaryDataReproduction}. The lists of glaciers
+    that were grouped to divide the Greenland Periphery into subregions
+    are archived under DOI
+    \href{https://doi.org/10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56}{\texttt{\small
+    10.4121/fb61f7d2-6d70-4957-912f-e68fac846b56}}
+    \citep{haacker2025ListsGlacierComplex}.
 } %% use this section when having data sets and software code available
 
 

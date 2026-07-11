@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{64}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{}
@@ -109,14 +109,43 @@ Gray, L., Burgess, D., Copland, L., Langley, K., Gogineni, P., Paden, J.,
   Radar Altimetry}}, Frontiers in Earth Science, 7, 146,
   \doi{10.3389/feart.2019.00146}, 2019.
 
-\bibitem[{Haacker(2025{\natexlab{a}})}]{cryoswath022}
+\bibitem[{Haacker(2025{\natexlab{a}})}]{cryoswath}
 Haacker, J.: {{CryoSwath}}: {{CryoSat-2}} swath processing package, Zenodo,
-  \doi{10.5281/zenodo.15064780}, 2025{\natexlab{a}}.
+  \doi{10.5281/zenodo.14825358}, 2025{\natexlab{a}}.
 
 \bibitem[{Haacker(2025{\natexlab{b}})}]{haacker2025ListsGlacierComplex}
 Haacker, J.: Lists of glacier and complex {{IDs}} accompanying the article
-  "{{Monthly}} surface elevation data of arctic mountain glaciers",
+  "{{CryoSwath}}: a {{CryoSat-2}} swath processor and monthly surface elevation
+  dataset for {{Arctic}} mountain glaciers",
   \doi{10.4121/FB61F7D2-6D70-4957-912F-E68FAC846B56}, 2025{\natexlab{b}}.
+
+\bibitem[{Haacker and
+  Wouters(2025{\natexlab{a}})}]{haacker2025GlacierSurfaceElevation}
+Haacker, J. and Wouters, B.: Glacier surface elevation change rate dataset
+  accompanying the article "{{CryoSwath}}: a {{CryoSat-2}} swath processor and
+  monthly surface elevation dataset for {{Arctic}} mountain glaciers",
+  \doi{10.4121/85738A14-6652-4E0C-8552-D6FC729141B3}, 2025{\natexlab{a}}.
+
+\bibitem[{Haacker and
+  Wouters(2025{\natexlab{b}})}]{haacker2025GlacierSurfaceElevationa}
+Haacker, J. and Wouters, B.: Glacier surface elevation dataset accompanying the
+  article "{{CryoSwath}}: a {{CryoSat-2}} swath processor and monthly surface
+  elevation dataset for {{Arctic}} mountain glaciers",
+  \doi{10.4121/955D7F5A-0E3F-4166-A411-F0DCC4557CB2}, 2025{\natexlab{b}}.
+
+\bibitem[{Haacker and
+  Wouters(2026{\natexlab{a}})}]{haacker2026AncilliaryDataReproduction}
+Haacker, J. and Wouters, B.: Ancilliary data for the reproduction workflow of
+  the article "{{CryoSwath}}: a {{CryoSat-2}} swath processor and monthly
+  surface elevation dataset for {{Arctic}} mountain glaciers",
+  \doi{10.4121/48892E44-EC2A-434F-BAC1-8B7E1507E7D2}, 2026{\natexlab{a}}.
+
+\bibitem[{Haacker and
+  Wouters(2026{\natexlab{b}})}]{haacker2026WorkflowReproductionArticle}
+Haacker, J. and Wouters, B.: Workflow for the reproduction of the article
+  "{{CryoSwath}}: a {{CryoSat-2}} swath processor and monthly surface elevation
+  dataset for {{Arctic}} mountain glaciers", 4TU.ResearchData,
+  \doi{10.4121/FDAD7BBE-0DEB-43D4-9A41-237BE0D60DF6}, 2026{\natexlab{b}}.
 
 \bibitem[{Haacker et~al.(2023)Haacker, Wouters, and
   Slobbe}]{haacker2023SystematicErrorsObserved}

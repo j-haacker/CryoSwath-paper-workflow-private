@@ -294,7 +294,7 @@ shell. On execution, the workflow would appear in a new directory
 `cryoswath_paper_workflow` under your working directory.
 
 ```shell
-git clone https://data.4tu.nl/v3/datasets/44097dfc-2fc5-4bae-aeee-87299d1af5dd.git cryoswath_paper_workflow
+git clone https://data.4tu.nl/v3/datasets/01e202e0-043f-4865-bd47-98a4b7332cde.git cryoswath_paper_workflow
 ```
 
 License
@@ -333,16 +333,23 @@ def changelog_text() -> str:
 All notable changes to this archive since version 1 are documented in
 this file.
 
-## v2 - 31 Mai 2026
+## v2 - TODO
 
-- Fixed using outdated lock file for randomly sampled calibration and
-  validation sites in Alaska.
-- Updated all files downstream of the cal/val excercise. This concerns
-  the uncertainties of most results.
-- Added these lock files for all region.
+- Updated archive metadata and instructions for the second public
+  workflow release, including DOI/version references and the 4TU git
+  clone URL.
+- Added archived reproduction inputs for downloaded source selectors so
+  public reproduction can skip protected or heavyweight processing
+  paths.
+- Fixed the outdated lock file for randomly sampled calibration and
+  validation sites in Alaska and added lock files for all regions.
+- Updated files downstream of the cal/val exercise, affecting reported
+  uncertainties and derived manuscript outputs.
 - Added `fig03__geometry_sketch.png`.
-- Added missing references to `.bbl` file. (!) Keys changed due to
-  Zotero update.
+- Updated rendered manuscript references, bibliography entries, and
+  code/data availability text.
+- Fixed manuscript table and figure issues, including sign conventions
+  and the Figure A2 palette/legend handling.
 """
 
 
@@ -407,7 +414,7 @@ def build_archive(output: Path, allow_missing: bool) -> int:
         "title": 'Ancilliary data for the reproduction workflow of the article "CryoSwath: a CryoSat-2 swath processor and monthly surface elevation dataset for Arctic mountain glaciers"',
         "article_title": "CryoSwath: a CryoSat-2 swath processor and monthly surface elevation dataset for Arctic mountain glaciers",
         "dataset_doi": "10.4121/48892e44-ec2a-434f-bac1-8b7e1507e7d2.v2",
-        "code_release_doi": "10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6.v1",
+        "code_release_doi": "10.4121/fdad7bbe-0deb-43d4-9a41-237be0d60df6.v2",
         "license": "CC-BY-4.0",
         "created_at": datetime.now(timezone.utc)
         .isoformat(timespec="seconds")
