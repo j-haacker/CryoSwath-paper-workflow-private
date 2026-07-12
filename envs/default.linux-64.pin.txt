@@ -72,6 +72,9 @@ https://conda.anaconda.org/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda#53abe
 https://conda.anaconda.org/conda-forge/noarch/charset-normalizer-3.4.4-pyhd8ed1ab_0.conda#a22d1fd9bf98827e280a02875d9a007a
 https://conda.anaconda.org/conda-forge/noarch/certifi-2026.1.4-pyhd8ed1ab_0.conda#eacc711330cd46939f66cd401ff9c44b
 https://conda.anaconda.org/conda-forge/noarch/requests-2.32.5-pyhcf101f3_1.conda#c65df89a0b2e321045a9e01d1337b182
+https://conda.anaconda.org/conda-forge/linux-64/rpds-py-0.30.0-py313h843e2db_0.conda#779e3307a0299518713765b83a36f4b1
+https://conda.anaconda.org/conda-forge/noarch/attrs-25.4.0-pyhcf101f3_1.conda#537296d57ea995666c68c821b00e360b
+https://conda.anaconda.org/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda#870293df500ca7e18bedefa5838a22ab
 https://conda.anaconda.org/conda-forge/linux-64/libgfortran5-15.2.0-h68bc16d_16.conda#39183d4e0c05609fd65f130633194e37
 https://conda.anaconda.org/conda-forge/linux-64/libgfortran-15.2.0-h69a702a_16.conda#40d9b534410403c821ff64f00d0adc22
 https://conda.anaconda.org/conda-forge/linux-64/libopenblas-0.3.30-pthreads_h94d23a6_4.conda#be43915efc66345cccb3c310b6ed0374
@@ -93,9 +96,6 @@ https://conda.anaconda.org/conda-forge/noarch/traitlets-5.14.3-pyhd8ed1ab_1.cond
 https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.21.2-pyhe01879c_0.conda#23029aae904a2ba587daba708208012f
 https://conda.anaconda.org/conda-forge/noarch/platformdirs-4.5.1-pyhcf101f3_0.conda#1bd2e65c8c7ef24f4639ae6e850dacc2
 https://conda.anaconda.org/conda-forge/noarch/jupyter_core-5.9.1-pyhc90fa1f_0.conda#b38fe4e78ee75def7e599843ef4c1ab0
-https://conda.anaconda.org/conda-forge/linux-64/rpds-py-0.30.0-py313h843e2db_0.conda#779e3307a0299518713765b83a36f4b1
-https://conda.anaconda.org/conda-forge/noarch/attrs-25.4.0-pyhcf101f3_1.conda#537296d57ea995666c68c821b00e360b
-https://conda.anaconda.org/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda#870293df500ca7e18bedefa5838a22ab
 https://conda.anaconda.org/conda-forge/noarch/jsonschema-specifications-2025.9.1-pyhcf101f3_0.conda#439cd0f567d697b20a8f45cb70a1005a
 https://conda.anaconda.org/conda-forge/noarch/jsonschema-4.26.0-pyhcf101f3_0.conda#ada41c863af263cc4c5fcbaff7c3e4dc
 https://conda.anaconda.org/conda-forge/noarch/nbformat-5.10.4-pyhd8ed1ab_1.conda#bbe1963f1e47f594070ffe87cdf612ea
@@ -518,7 +518,7 @@ https://conda.anaconda.org/conda-forge/noarch/multimethod-2.0.2-pyhd8ed1ab_0.con
 https://conda.anaconda.org/conda-forge/noarch/importlib-resources-7.1.0-pyhd8ed1ab_0.conda#e3bffa82b874f8b9a2631bddb3869529
 https://conda.anaconda.org/conda-forge/noarch/earthaccess-0.18.0-pyhc364b38_0.conda#3ec59d2fd5976f413d75463241b6eab7
 https://conda.anaconda.org/conda-forge/linux-64/bottleneck-1.6.0-np2py313hc18bace_3.conda#5ce830ed3ab4a6f9deaf40bc02690e88
-https://conda.anaconda.org/conda-forge/noarch/cryoswath-0.2.6-pyhd8ed1ab_0.conda#1c097509acee29612d4ae9f5304e2c1f
+https://conda.anaconda.org/conda-forge/noarch/cryoswath-0.2.7-pyhd8ed1ab_0.conda#06aa28d4dbf20495b935e5520cf91cae
 https://conda.anaconda.org/conda-forge/noarch/truststore-0.10.4-pyhcf101f3_0.conda#c2db35b004913ec69bcac64fb0783de0
 https://conda.anaconda.org/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py313h54dd161_1.conda#ef8c7c9f4ea478806d9056bbc9c9c093
 https://conda.anaconda.org/conda-forge/linux-64/ruamel.yaml-0.18.17-py313h54dd161_2.conda#2929af8c70387380159eb770062ce65c
