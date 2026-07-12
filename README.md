@@ -24,6 +24,15 @@ regenerates the selected outputs from their workflow inputs.
 | Fast reproduction | `pixi run reproduce 1` | Download the public reproduction archive, rerun lightweight figure paths, and materialize `paper/manuscript.tex` without Earthdata or ESA credentials. |
 | Selective produced paths | `pixi run snakemake <target> --cores <n> --config <selector>=produced` | Rebuild one analysis path from inputs without expanding the whole workflow. Some produced paths are public and workstation-friendly; others need credentials or large memory. |
 
+Instead of passing `--config` arguments, edit `config/snakemake.yaml` to
+persist source-selector settings. With all selectors set to `produced`,
+the full workflow took between 1.5 and 5 hours using 48 cores on an AMD
+EPYC 7452 CPU (up to 2.35 GHz) for test runs skipping ArcticDEM mosaic
+and strip downloads. Peak observed per-job memory was about 50 GB;
+earlier up to 90 GB were observed for heavier cal/val runs. Add
+`--resources mem_mb=16000` to enforce a memory limit of about 16 GB for
+example but expect the runtime to increase.
+
 ## Requirements and platforms
 
 The primary tested route is x86_64 Linux. On Windows, use WSL2. Please
@@ -55,6 +64,7 @@ digits; use the provided random-strip lock files
 
 Download and unpack the code release above, then run the following from the
 repository root. The final argument is the number of cores Snakemake may use.
+Further snakemake arguments can be appended.
 
 ```bash
 pixi run dry-run 1
