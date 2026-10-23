@@ -205,7 +205,7 @@ Detailed selector reference:
 | `elevation_timeseries_source` | `downloaded`, `produced` | Downloaded `resources/Arctic_monthly_avg_glacier_surface_elevation_wrt_2010_per_RGI_o2region__meter.csv` vs deriving it from monthly datasets and cal/val summaries | No if `calval_source=downloaded`; otherwise inherits cal/val | Light to moderate unless produced cal/val is selected |
 | `publication_artifact_source` | `downloaded`, `produced` | Archived manuscript inputs/final figures vs rebuilding protected/heavy artifact paths | `downloaded`: no; `produced`: yes | `downloaded`: light; `produced`: heavy |
 
-The published 2010-2024 trend rasters are always downloaded by this workflow to
+The published 2010-2024 trend rasters are downloaded by default to
 `resources/trends_dataset/`. The area and elevation time-series tables are
 active workflow outputs in `resources/` and can be downloaded or reproduced via
 their own source selectors.
@@ -216,6 +216,39 @@ archive defined by the workflow.
 The 2010-2024 trend rasters can be reproduced using the separate 4TU trend
 workflow at
 `https://data.4tu.nl/v3/datasets/f8c6e417-7893-4c26-a532-296f59712089.git`.
+
+### Temporary local trend-raster source
+
+Until a corrected public release is adopted, use
+`--config trend_dataset_local_dir=../downscale_08_v2/data/L4` to stage all 32
+rasters from the upstream checkout instead of downloading them. Relative paths
+are resolved against this repository's root. The source directory must differ
+from the output directory and contain every expected raster; missing files fail
+without falling back to a download. Source files are declared workflow inputs,
+and copies receive fresh modification times. The acquisition log records the
+source directory and copied files.
+
+For adoption, run the workflow with the local source:
+
+```bash
+pixi run snakemake publication_reproduction --cores <N> \
+  --config trend_dataset_local_dir=../downscale_08_v2/data/L4
+```
+
+Replace `<N>` with your available core count. The three analyses must use their
+`produced` selectors: `publication_artifact_source`, `glacierized_area_source`,
+and `coverage_analysis_source`. This temporary commit removes `ancient()` from
+their trend-raster inputs, so staging updated rasters triggers these analyses
+and their downstream results through normal dependency propagation. Confirm
+that staged rasters match the upstream checksums and Southeast Scandinavia has
+1,190 finite trend cells.
+
+Continue supplying the override on subsequent local runs. Omitting it selects
+the older published source, which can replace the corrected files if acquisition
+runs again. This workaround is temporary: before final reproduction, pin a
+verified corrected public release, remove the workaround, and explicitly refresh
+acquisition and the three analyses again. Keep this workaround in a separate
+commit so it can be reverted or omitted independently of scientific fixes.
 
 If the 4TU monthly-data server has a broken TLS certificate, use
 `--config download_verify_tls=false` to skip certificate verification.
@@ -259,10 +292,10 @@ pixi run snakemake results/one_year_error_correlation.txt --cores 1 --sdm conda 
 | --- | --- |
 | `results/one_year_error_correlation.txt`, `paper/figures/figA1__*.pdf`, `paper/figures/figA2__*.pdf` | `calval_source` |
 | `paper/figures/fig04__*.pdf`, `paper/figures/fig05__*.pdf` | `glacierized_area_source`, `elevation_timeseries_source`; `elevation_timeseries_source=produced` also follows `calval_source` |
-| `results/tabA2__subregion_overview.tex` | Published trend rasters are always downloaded |
-| `paper/figures/fig16__*.pdf`, `results/coverage_analysis.csv` | `coverage_analysis_source`; published trend rasters are always downloaded |
+| `results/tabA2__subregion_overview.tex` | Published trend rasters are downloaded by default |
+| `paper/figures/fig16__*.pdf`, `results/coverage_analysis.csv` | `coverage_analysis_source`; published trend rasters are downloaded by default |
 | `publication_reproduction` | Default downloaded source selectors plus `publication_artifact_source`; no credentials when the publication archive is configured |
-| `paper/manuscript.pdf` | `calval_source`, `coverage_analysis_source`, `glacierized_area_source`, `elevation_timeseries_source`, `publication_artifact_source`; published trend rasters are always downloaded |
+| `paper/manuscript.pdf` | `calval_source`, `coverage_analysis_source`, `glacierized_area_source`, `elevation_timeseries_source`, `publication_artifact_source`; published trend rasters are downloaded by default |
 
 ## Resource Usage
 
