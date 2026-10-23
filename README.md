@@ -19,6 +19,15 @@ to choose how far upstream each analysis is reproduced: `downloaded`
 uses archived intermediate or final outputs, while `produced`
 regenerates the selected outputs from their workflow inputs.
 
+[![Selector-aware Snakemake rule graph showing the produced rules bypassed by each downloaded source selector](docs/workflow-source-selectors.svg)](docs/workflow-source-selectors.svg)
+
+The diagram is the union of the `publication_reproduction` rule graphs for the
+produced and downloaded selector variants. A colored cluster is omitted when
+its matching selector is set to `downloaded`; colored dashed edges show where
+the corresponding archived outputs re-enter the workflow. Generate it with
+`pixi run workflow-diagram` and check that it is current with
+`pixi run check-workflow-diagram`.
+
 | Tier | How to run | Intended use |
 | --- | --- | --- |
 | Fast reproduction | `pixi run reproduce 1` | Download the public reproduction archive, rerun lightweight figure paths, and materialize `paper/manuscript.tex` without Earthdata or ESA credentials. |
